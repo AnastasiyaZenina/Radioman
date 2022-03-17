@@ -49,21 +49,20 @@ public class Radio {
     public void setPrevStation() {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
+            return;
         }
-        if (currentStation <= minStation) {
-            this.currentStation = maxStation;
-        }
-    }
+                this.currentStation = maxStation;
+            }
 
-    public void setNextStation() {
-        if (currentStation == maxStation) {
-            this.currentStation = 0;
-            return;
-        }
-        if (currentStation > minStation) {
+        public void setNextStation () {
+            if (currentStation == maxStation) {
+                this.currentStation = 0;
+                return;
+            }
+            if (currentStation > minStation) {
+                this.currentStation = currentStation + 1;
+                return;
+            }
             this.currentStation = currentStation + 1;
-            return;
         }
-        this.currentStation = currentStation + 1;
     }
-}
