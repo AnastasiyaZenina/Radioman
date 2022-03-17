@@ -67,10 +67,9 @@ public class Radio {
     public void setPrevStation() {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
+            return;
         }
-        if (currentStation <= minStation) {
-            this.currentStation = maxStation;
-        }
+        this.currentStation = maxStation;
     }
 
     public void setNextStation() {
