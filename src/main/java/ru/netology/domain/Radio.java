@@ -55,7 +55,7 @@ public class Radio {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation > maxStation) {
+        if (currentStation >= quantityStation) {
             return;
         }
         if (currentStation < minStation) {
