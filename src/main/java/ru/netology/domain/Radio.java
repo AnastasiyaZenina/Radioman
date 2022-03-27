@@ -51,18 +51,18 @@ public class Radio {
             currentStation = currentStation - 1;
             return;
         }
-                this.currentStation = maxStation;
-            }
-
-        public void setNextStation () {
-            if (currentStation == maxStation) {
-                this.currentStation = 0;
-                return;
-            }
-            if (currentStation > minStation) {
-                this.currentStation = currentStation + 1;
-                return;
-            }
-            this.currentStation = currentStation + 1;
-        }
+        this.currentStation = maxStation;
     }
+
+    public void setNextStation() {
+        if (currentStation == maxStation) {
+            this.currentStation = 0;
+            return;
+        }
+        if (currentStation > minStation) {
+            this.currentStation = currentStation + 1;
+            return;
+        }
+        this.currentStation = currentStation + 1;
+    }
+}
