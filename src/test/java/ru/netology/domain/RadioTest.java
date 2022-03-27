@@ -12,7 +12,7 @@ class RadioTest {
     }
 
     @Test
-    public void radio() {
+    public void radio1() {
         Radio radio = new Radio(5);
         radio.setQuantityStation(5);
 
@@ -21,6 +21,18 @@ class RadioTest {
 
         assertEquals(expected, actual);
 
+    }
+
+    @Test
+    void radio2() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(0);
+        radio.setPrevStation();
+
+        int expected = 19;
+        int actual = radio.getCurrentStation();
+
+        assertEquals(expected, actual);
     }
 
     @Test
