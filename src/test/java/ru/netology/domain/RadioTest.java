@@ -91,6 +91,28 @@ class RadioTest {
     }
 
     @Test
+    public void setCurrentVolume5() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(0);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setCurrentVolume6() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(1);
+
+        int expected = 1;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void reduceVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(100);
@@ -121,6 +143,18 @@ class RadioTest {
         radio.reduceVolume();
 
         int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void reduceVolume4() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(50);
+        radio.reduceVolume();
+
+        int expected = 49;
         int actual = radio.getCurrentVolume();
 
         assertEquals(expected, actual);
@@ -163,9 +197,21 @@ class RadioTest {
     }
 
     @Test
+    public void increaseVolume4() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(1);
+        radio.increaseVolume();
+
+        int expected = 2;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void currentStation1() {
         Radio radio = new Radio();
-        radio.setCurrentStation(11);
+        radio.setCurrentStation(10);
 
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -238,6 +284,18 @@ class RadioTest {
         radio.setNextStation();
 
         int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void nextStation4() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(1);
+        radio.setNextStation();
+
+        int expected = 2;
         int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
